@@ -23,7 +23,6 @@ Dependencies:
 Install required Python packages:
 
 bash
-Copy code
 pip install -r requirements.txt
 
 Environment Variables:
@@ -32,37 +31,31 @@ Set the COINGECKO_API_KEY environment variable for accessing the CoinGecko API.
 Setup
 Clone the repository:
 bash
-Copy code
 git clone https://github.com/<your_username>/CryptoBull.git
 cd CryptoBull
 
 Create directories for storing data:
 bash
-Copy code
 mkdir crypto_data enriched_crypto_data enriched_crypto_news combined_data lstm/processed_data
 
 Add API keys to .env:
 env
-
-Copy code
 COINGECKO_API_KEY=<your_api_key>
 
 Usage
+
 Data Collection
 Fetch market data:
 bash
-Copy code
 python crypto_data_fetcher.py
 
 Fetch news data:
 bash
-Copy code
 python news_fetcher.py
 
 Data Processing
 Process collected data:
 bash
-Copy code
 python crypto_processor.py
 python news_processor.py
 python data_processor.py
@@ -70,8 +63,8 @@ python data_processor.py
 Model Training
 Train the LSTM model:
 bash
-Copy code
 python main.py
+
 Predictions
 Predictions are generated and saved in the lstm/ directory.
 
@@ -80,66 +73,61 @@ Fork the repository.
 
 Create a feature branch:
 bash
-Copy code
 git checkout -b feature/your-feature-name
 
 Commit your changes:
 bash
-Copy code
 git commit -m "Add your commit message"
 
-# Push to the branch:
+Push to the branch:
 git push origin feature/your-feature-name
 
-# Open a pull request:
-# Navigate to your GitHub repository and open a pull request for review.
+Open a pull request:
+Navigate to your GitHub repository and open a pull request for review.
 
 Testing
 Unit Tests
 Ensure all modules work as intended by running the test suite:
 
 bash
-Copy code
 python -m unittest discover tests/
 Integration Tests
 Run end-to-end tests to validate data pipelines and model performance:
 
 bash
-Copy code
 python tests/integration_test.py
 Linting
 Use tools like flake8 or black to ensure code quality:
 
 bash
-Copy code
 flake8 .
 black --check .
 Known Issues
+
 API Rate Limiting:
 
 High-frequency data fetching may hit the CoinGecko API rate limits. To mitigate this, implement retries or API key rotation.
+
 Missing Data:
-
 Cryptocurrency data can occasionally have gaps. Use the crypto_processor.py script to handle missing values with interpolation.
-Model Drift:
 
+Model Drift:
 The LSTM model may become less accurate over time due to changing market conditions. Periodic retraining is required.
 Future Improvements
-Real-Time Prediction:
 
+Real-Time Prediction:
 Implement a WebSocket client for live data streaming and real-time predictions.
 Advanced Modeling:
-
 Explore advanced architectures like Transformer models or attention mechanisms for better temporal analysis.
-UI Dashboard:
 
+UI Dashboard:
 Build a web-based dashboard using Flask or Django for visualization and model interaction.
 On-Chain Metrics:
-
 Incorporate blockchain metrics such as wallet activity and transaction volumes to enhance predictions.
-Improved Security:
 
+Improved Security:
 Extend CrowdStrike integration to monitor suspicious activity and secure API keys.
+
 Acknowledgments
 Special thanks to:
 
